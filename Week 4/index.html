@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Week 4 Exercise
+Daniel Zeng
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>    
+    <h1>Basic document flow</h1>
+
+    <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+    <p class="positioned">By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+
+    <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, 
+        and adjacent text nodes, if there is space on the same line. 
+        Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, 
+        or just go on to a new line if not, much like this image will do: <img src="long.jpg" 
+        alt="a wide but short section of a photo of several fabrics"></p>
+    
+    <h2>Sticky positioning</h2>
+
+    <dl>
+        <dt>A</dt>
+        <dd>Apple</dd>
+        <dd>Ant</dd>
+        <dd>Altimeter</dd>
+        <dd>Airplane</dd>
+        <dt>B</dt>
+        <dd>Bird</dd>
+        <dd>Buzzard</dd>
+        <dd>Bee</dd>
+        <dd>Banana</dd>
+        <dd>Beanstalk</dd>
+        <dt>C</dt>
+        <dd>Calculator</dd>
+        <dd>Cane</dd>
+        <dd>Camera</dd>
+        <dd>Camel</dd>
+        <dt>D</dt>
+        <dd>Duck</dd>
+        <dd>Dime</dd>
+        <dd>Dipstick</dd>
+        <dd>Drone</dd>
+        <dt>E</dt>
+        <dd>Egg</dd>
+        <dd>Elephant</dd>
+        <dd>Egret</dd>
+    </dl>
+
+    <div id="starwarsCrawl">
+        <h3> Budget Star Wars Crawl </h3>
+        <ol>
+            <li id="line1">A long time ago in a galaxy far, far away...</li>
+            <li id="line2">It is a lawless time. </li>
+            <li id="line3">Crime Syndicates compete for resources – food, medicine, and hyperfuel. </li>
+            <li id="line4">On the shipbuilding planet of Corellia, </li>
+            <li id="line5">foul Lady Proxima forces runaways into a life of crime in exchange for shelter and protection. </li>
+            <div id = "olSpace"></div>
+            <li id="line6">On these mean streets, a young man fights for survival,</li>
+            <li id="line7">but yearns to fly among the stars…</li>
+        </ol>
+        <h3>From Solo: A Star Wars</h3>
+    </div>
+
+    <div id="empty"></div>
+        
+
+</body>
+</html>
