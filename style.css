@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    border: 1em bisque;
+    position: absolute;
+    top:10em;
+    left:50em;
+}
+
+li{
+    color:darkorange;
+    text-align: center;
+    position: sticky;
+    top: 50px;
+    left: 30px;
+}
+
+#empty{
+    min-height: 300em;
+}
