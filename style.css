@@ -17,6 +17,11 @@ a{
     min-height: 300em;
 }
 
+#downArrow{
+    color:crimson;
+    font-size: 50em;
+}
+
 body{
     display: flex;
     flex-flow: column;
