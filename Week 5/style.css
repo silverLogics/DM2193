@@ -56,6 +56,18 @@ nav{
     left: 30px;
 }
 
+a{
+    color:rgb(242, 122, 16);
+    margin: 3px;
+    padding: 10px green;
+    border: 2px groove rgb(233, 138, 160);
+    background-color: rgb(228, 245, 220);
+    
+    position: sticky;
+    top: 50px;
+    left: 30px;
+}
+
 #empty{
     min-height: 50em;
 }
