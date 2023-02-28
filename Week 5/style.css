@@ -14,13 +14,13 @@ body{
 b{
     text-transform: uppercase;
     font-weight: lighter;
-    margin: 3px red;
-    border: 2px ridge red;
+    margin: 10px rgb(0, 174, 255);
+    border: 2px ridge rgb(62, 101, 255);
 }
 
 em{
-    padding: 3px green;
-    border: 2px groove red;
+    padding: 10px green;
+    border: 2px groove rgb(255, 0, 60);
 }
 
 h1{
@@ -34,7 +34,7 @@ h2{
 }
 
 p{
-    color:blueviolet;
+    color:rgb(114, 66, 159);
     background-color: beige;
     margin: 3px;
 }
