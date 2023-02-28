@@ -56,6 +56,7 @@ nav{
     left: 30px;
 }
 
+/*
 a{
     color:rgb(242, 122, 16);
     margin: 3px;
@@ -67,6 +68,7 @@ a{
     top: 50px;
     left: 30px;
 }
+*/
 
 #empty{
     min-height: 50em;
