@@ -19,7 +19,8 @@ a{
 
 #downArrow{
     color:crimson;
-    font-size: 50em;
+    font-size: 10em;
+    text-align:center;
 }
 
 body{
