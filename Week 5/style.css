@@ -21,6 +21,11 @@ em{
 h1{
     font-weight: bold;
     color:cornsilk;
+    position: fixed;
+    border: 2px outset rgb(52, 177, 226);
+    background-color: rgb(148, 72, 219, 0.3);
+    top: 10px;
+    left: 50px;
 }
 
 h2{
@@ -38,4 +43,19 @@ li{
     color:rgb(248, 109, 153);
     background-color: rgb(228, 245, 220);
     margin: 3px;
+}
+
+nav{
+    color:rgb(109, 248, 137);
+    margin: 3px;
+    padding: 10px green;
+    border: 2px groove rgb(233, 138, 160);
+    
+    position: sticky;
+    top: 50px;
+    left: 30px;
+}
+
+#empty{
+    min-height: 50em;
 }
