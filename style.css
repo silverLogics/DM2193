@@ -9,6 +9,10 @@ li{
     position: sticky;
 }
 
+a{
+    color:rgb(255, 77, 0);
+}
+
 #empty{
     min-height: 300em;
 }
