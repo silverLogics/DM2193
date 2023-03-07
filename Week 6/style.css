@@ -1,0 +1,71 @@
+#anime{
+    animation-iteration-count: infinite;
+}
+
+body{
+    background-color: black;
+    display: flex;
+}
+
+#bolt1{
+    width: 100px;
+    height: 10px;
+    border-radius: 20%;
+    background: yellow;
+    
+    animation: 0.1s linear 0s infinite alternate rise;
+}
+
+@keyframes rise {
+    from {
+        transform: skew(50deg) translateY(100vh);
+    }
+    70%{
+        transform: skew(40deg) translateY(10vh);
+    }
+    to {
+        transform: skew(50deg) rotate(30deg) translateY(0);
+    }
+}
+
+#bolt2{
+    width: 10px;
+    height: 100px;
+    border-radius: 130%;
+    background: rgb(255, 255, 119);
+    
+    animation: 1s linear 1s infinite alternate rise2;
+}
+
+@keyframes rise2 {
+    from {
+        transform: skew(50deg) translateX(0) translateY(100vh);
+    }
+    20%{
+        transform: skew(-40deg) translateY(10vh);
+    }
+    to {
+        transform: skew(50deg) rotate(40deg) translateX(30) translateY(0);
+    }
+}
+
+#DM2193{
+    color: rgb(0, 255, 179);
+    flex-flow: column;
+    align-items: flex-end;
+    font-size: 10em;
+
+    animation: 1s linear 3s infinite alternate dmIN;
+}
+
+@keyframes dmIN {
+    from {
+        transform: perspective(17px);
+    }
+    70%{
+        transform: skew(-40deg) translateY(10vh);
+    }
+    to {
+        transform: skew(50deg) rotate(40deg) translateX(30) translateY(0);
+    }
+}
