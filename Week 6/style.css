@@ -6,7 +6,7 @@ body{
     background-color: black;
     display: flex;
     align-items: flex-end;
-    flex-flow:row;
+    flex-flow: row;
 }
 
 #bolt1{
