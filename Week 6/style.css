@@ -5,6 +5,7 @@
 body{
     background-color: black;
     display: flex;
+    align-items: flex-end;
 }
 
 #bolt1{
@@ -49,10 +50,33 @@ body{
     }
 }
 
+#bolt3{
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid rgb(224, 165, 39);
+    border-bottom: 50px solid transparent;
+    border-radius: 130%;
+    background: rgb(211, 211, 23);
+    
+    animation: 1s linear 0.5s infinite alternate rise2;
+}
+
+@keyframes rise3 {
+    from {
+        transform: skew(50deg) translateX(1000) translateY(100vh);
+    }
+    20%{
+        transform: skew(-40deg) translateY(10vh);
+    }
+    to {
+        transform: skew(50deg) rotate(40deg) translateX(30) translateY(0);
+    }
+}
+
 #DM2193{
     color: rgb(0, 255, 179);
     flex-flow: column;
-    align-items: flex-end;
     font-size: 10em;
 
     animation: 1s linear 3s infinite alternate dmIN;
