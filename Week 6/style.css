@@ -74,6 +74,31 @@ body{
     }
 }
 
+#bolt4{
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    background-color: rgb(208, 23, 211);
+    
+    animation: 1s linear 0.8s infinite alternate rise4;
+}
+
+@keyframes rise4 {
+    from {
+        
+    }
+    20%{
+        transform: skew(-40deg) translateY(10vh);
+    }
+    60%{
+        transform: scale(2, 0.5);
+    }
+    to {
+        transform: skew(50deg) rotate(40deg) translateX(30) translateY(0);
+    }
+}
+
 #DM2193{
     color: rgb(0, 255, 179);
     flex-flow: column;
