@@ -1,0 +1,115 @@
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c0b8b8;
+}
+
+h4{
+    width: 80%;
+    height: 80%;
+    background-color: rgb(222, 190, 190);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(254, 249, 249, 0.5);
+    transition: background-color 3s ease;
+    font-size: medium;
+}
+
+footer {
+    display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 20px;
+	padding: 20px;
+	background-color: #b5ada5ee;
+}
+
+footer:hover {
+    color: #575e6d;
+}
+
+#HomeNext{
+    align-items: right;
+}
+
+li{
+    background-color: #f1b6a9;
+	animation: fly-in 1s forwards;
+}
+
+@keyframes fly-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    70% {
+        transform: translateX(25%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#blank1{
+    min-height: 3em;
+}
+
+#alexeiFace{
+    background-image: url("../Media/shuglin/ v2_lab.jpg");
+    animation: zooming 1s ease infinite;
+}
+
+@keyframes zooming {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+  
+.imgFit{
+    object-fit: contain;
+    transform: scale(0.5, 0.5);
+}
+
+.imgFit:hover {
+    animation: zoomin 1s ease forwards;
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(0.2, 0.2);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(.5, .5);
+    }
+}
+
+.rollin{
+    animation: rotatin 3s ease infinite;
+}
+
+@keyframes rotatin {
+    0% {
+        transform: rotate(0deg);
+    }
+    33% {
+        transform: rotate(30deg);
+        transform: scale(0.9, 1);
+    }
+    66% {
+        transform: rotate(-30deg);
+        transform: scale(1, 0.9);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
