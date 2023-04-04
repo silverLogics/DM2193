@@ -60,18 +60,34 @@ li{
     animation: zooming 1s ease infinite;
 }
 
-@keyframes zooming {
-    0% {
-        transform: scale(1, 1);
-    }
-    50% {
-        transform: scale(1.5, 1.5);
-    }
-    100% {
-        transform: scale(1, 1);
+@media (orientation: landscape){
+    @keyframes zooming {
+        0% {
+            transform: scale(1, 1);
+        }
+        50% {
+            transform: scale(1.5, 1.5);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
     }
 }
-  
+
+@media (orientation: portrait){
+    @keyframes zooming {
+        0% {
+            transform: scale(1, 1);
+        }
+        50% {
+            transform: scale(1.5, 1);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+}
+
 .imgFit{
     object-fit: contain;
     transform: scale(0.5, 0.5);
