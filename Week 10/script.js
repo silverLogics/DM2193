@@ -10,6 +10,10 @@ let currentFontIndex = Math.floor(Math.random() * (fontFamilies.length - 1));
 header.style.fontFamily = fontFamilies[currentFontIndex];
 
 runButton.addEventListener('click', function() {
+    runButton.style.height = runButton.offsetHeight + 5 + 'px';
+    runButton.style.width = runButton.offsetWidth + 5 + 'px';
+    runButton.style.fontSize = parseInt(window.getComputedStyle(runButton).fontSize) + 1 + 'px';
+
     horses.forEach(horse => {
         horse.style.animation = 'none'; // Reset the animation
         horse.offsetHeight; // Trigger a reflow to force the reset to apply
@@ -25,6 +29,9 @@ runButton.addEventListener('click', function() {
     
     header.style.fontFamily = fontFamilies[currentFontIndex];
     currentFontIndex = (currentFontIndex + 1) % fontFamilies.length;
+
+    console.log(runButton.offsetHeight);
+    console.log(runButton.offsetWidth);
     console.log('runButton');
 });
 
