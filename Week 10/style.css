@@ -1,0 +1,46 @@
+.horse {
+    grid-column: 1;
+    height: 8em;
+    width: auto;
+    animation-name: run;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes run {
+    from { 
+        transform: translateX(-10%);
+    }
+    to { 
+        transform: translateX(250%);
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-gap: 10px;
+    justify-items: right;
+}
+
+button {
+    margin-top: 50px;
+}
+
+body {
+    background-color: rgb(27, 176, 72);
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.finishLine {
+    width: 5px;
+    height: 24em;
+    background-color: red;
+    margin-left: 160px;
+    align-self: center;
+    border: 10px rgb(60, 136, 249) dashed;
+    border-radius: 1em;
+}
