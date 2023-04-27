@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+}
+
+audio {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pitch {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
