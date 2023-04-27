@@ -53,7 +53,7 @@ audio.addEventListener('canplay', () => {
                     canvasCtx.moveTo(x1, y);
                     canvasCtx.lineTo(x2, y);
                     canvasCtx.strokeStyle = 'red';
-                    canvasCtx.lineWidth = 3;
+                    canvasCtx.lineWidth = 4;
                     canvasCtx.stroke();
                 }
 
