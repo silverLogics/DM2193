@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noEmit": true,
+    "checkJs": true,
+    "strict": true
+  },
+  "include": ["index.js", "test/*.js"]
+}
