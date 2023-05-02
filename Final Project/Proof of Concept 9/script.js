@@ -187,3 +187,18 @@ audio.addEventListener('play', () => {
 audio.addEventListener('ended', () => {
     console.log('Audio has ended');
 });
+
+//Popup instructions from week 11
+const square = document.querySelector('.square');
+const popupContainer = document.querySelector('.popup-container');
+square.addEventListener('click', () => {
+    // Show the popup when square is clicked
+    popupContainer.style.visibility = 'visible';
+    popupContainer.style.opacity = 1;
+});
+
+// Hide popup when container is clicked
+popupContainer.addEventListener('click', () => {
+    popupContainer.style.visibility = 'hidden';
+    popupContainer.style.opacity = 0;
+});

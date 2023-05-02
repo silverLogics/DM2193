@@ -40,10 +40,26 @@ Preliminary scoring
 <body>
     <audio src="../Media/20 Led Zeppelin - Stairway To Heaven.mp3"></audio>
     <!--<audio src="../Media/A 440 Hz.m4a"></audio>-->
-	<button id="toggleButton">Start</button>
+    <div class="container">
+        <button id="toggleButton">Start</button>
+        <div class="square">Instructions</div>
+    </div>
 	<div id="pitch">Pitch</div>
     <div id="clarity">Clarity</div>
     <div id="score">Score</div>
+    <div class="popup-container">
+        <div class="popup">
+            Click Start to Start. If the audio plays, but nothing shows on the canvas, reload the page. 
+            <br>
+            The black bar will follow your cursor's vertical position on the canvas. 
+            <br>
+            The objective is to keep your cursor aligned to the music notes, which will come from the right. 
+            <br>
+            Higher scores are BAD! They mean you made a lot of mistakes!
+            <br>
+            Good Luck!
+        </div>
+    </div>
     <canvas></canvas>
 </body>
 </html
