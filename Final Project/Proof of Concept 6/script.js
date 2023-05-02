@@ -67,11 +67,6 @@ audio.addEventListener('canplay', () => {
                 () => updatePitch(analyserNode, detector, input, sampleRate),
                 1000
             );
-            /*
-            const sleep = ms => new Promise(r => setTimeout(r, ms));
-            sleep(100);
-            */
-        //}
     }
     console.log('Hi');
     const detector = PitchDetector.forFloat32Array(analyser.fftSize);
