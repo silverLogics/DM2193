@@ -47,7 +47,7 @@ canvas {
     width: 200px;
     height: 100px;
     */
-    background-color: rgb(221, 138, 138);
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +57,7 @@ canvas {
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    /*animation: rainbow 7s ease-in-out infinite alternate;*/
+    animation: rainbow 7s ease-in-out infinite alternate;
 }
 
 @keyframes rainbow {
@@ -118,9 +118,4 @@ h1 {
     100% {
         transform: scale(1);
     }
-}
-
-#game1{
-    border: 0.5px solid #e2e2e2;
-    background-color: rgb(255, 224, 224);
 }
