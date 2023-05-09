@@ -44,6 +44,9 @@ audio.addEventListener('canplay', () => {
         const draw = () => {
             // Clear the canvas
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            //Line width for notes
+            const lineW = 4;
 
             // Add the pitch to the pitchData array
             if (pitch !== null) {
@@ -66,9 +69,6 @@ audio.addEventListener('canplay', () => {
             //canvasCtx.fillStyle = 'yellow';
             canvasCtx.fillStyle = "rgb(255,255,0)";
             canvasCtx.fillRect(0, 0, canvas.width / pitchData.size(), canvas.height);
-
-            //Line width for notes
-            const lineW = 4;
 
             // Draw the lines for all the pitch data
             // Adjusted by the pitchRange
@@ -95,6 +95,7 @@ audio.addEventListener('canplay', () => {
                 canvasCtx.stroke();
             }
 
+            //Draw line for mouse indicator using its posY
             const segmentWidth = canvas.width / pitchData.size();
             canvasCtx.beginPath();
             canvasCtx.moveTo(0, posY);
@@ -106,15 +107,16 @@ audio.addEventListener('canplay', () => {
 
             // Get the image data for the canvas
             const imageData = canvasCtx.getImageData(0, 0, 1, canvas.height);
+            //console.log("Composite operation: " + canvasCtx.globalCompositeOperation);
             // Loop over each pixel in the image data and count the number of red pixels
+            
             for (let i = 0; i < imageData.data.length; i += 4) {
                 //Get the rgb values for the pixel
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
-
                 //Tally up the fails
-                if (red === 1 && green === 0 && blue === 0) {
+                if (red >= 1 && green === 0 && blue === 0) {
                     //Red
                     numFails++;
                     console.log("Red seen");
@@ -137,8 +139,8 @@ audio.addEventListener('canplay', () => {
                 else{
                     console.log("UNKNOWN COLOR SEEN! RGB: " + red + " " + green + " " + blue);
                 }
-                
             }
+            
             scoreElement.textContent = "Fails: " + numFails;
 
             // Request the next animation frame
@@ -152,8 +154,6 @@ audio.addEventListener('canplay', () => {
             1000
         );
     }
-    console.log('Hi');
-
     updatePitch(analyser, detector, input, context.sampleRate);
 });
 
