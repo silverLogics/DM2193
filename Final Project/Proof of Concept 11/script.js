@@ -104,47 +104,44 @@ const audioPlay = () => {
 
             // Get the image data for the canvas
             //const imageData = canvasCtx.getImageData(0, 0, 1, canvas.height);
-            const imageData = canvasCtx.getImageData(segmentWidth + 10, 1, 1, canvas.height);
+            //const imageData = canvasCtx.getImageData(segmentWidth + 10, 1, 1, canvas.height);
+            
+            //Get a pixel on the 2nd segment to the right of the left of the canvas, at the same posY as the mouse
+            const imageData = canvasCtx.getImageData(segmentWidth * 2, posY, 1, 1);
             //console.log("Composite operation: " + canvasCtx.globalCompositeOperation);
             // Loop over each pixel in the image data and count the number of red pixels
             
+            const i = 0;
+            //Get the rgb values for the pixel in the segment to the right
+            const red = imageData.data[i];
+            const green = imageData.data[i + 1];
+            const blue = imageData.data[i + 2];
             
-            //for (let i = 0; i < imageData.data.length; i += 4) {//Lags heavily
-                
-                let i = posY * 4;
-                //Get the rgb values for the pixel in the segment to the right
-                const red = imageData.data[i];
-                const green = imageData.data[i + 1];
-                const blue = imageData.data[i + 2];
-                
-                //Tally up the fails
-                if (red >= 1 && green === 0 && blue === 0) {
-                    //Red
-                    numFails++;
-                    console.log("Red seen");
-                }
-                else if (red === 0 && green === 0 && blue >= 1) {
-                    //Blue
-                    numFails++;
-                    console.log("Blue seen");
-                }
-                else if (red === 0 && green === 0 && blue === 0) {
-                    //Black
-                    //numFails++;
-                    console.log("Black seen");
-                }
-                else if (red >= 1 && green >= 1 && blue === 0) {
-                    //Yellow
-                    //numFails++;
-                    console.log("Yellow seen");
-                }
-                else{
-                    //numFails++;
-                    console.log("UNKNOWN COLOR SEEN! RGB: " + red + " " + green + " " + blue);
-                }
-                
-            //}
-            
+            //Tally up the fails
+            if (red >= 1 && green === 0 && blue === 0) {
+                //Red
+                numFails++;
+                console.log("Red seen");
+            }
+            else if (red === 0 && green === 0 && blue >= 1) {
+                //Blue
+                numFails++;
+                console.log("Blue seen");
+            }
+            else if (red === 0 && green === 0 && blue === 0) {
+                //Black
+                //numFails++;
+                console.log("Black seen");
+            }
+            else if (red >= 1 && green >= 1 && blue === 0) {
+                //Yellow
+                //numFails++;
+                console.log("Yellow seen");
+            }
+            else{
+                //numFails++;
+                console.log("UNKNOWN COLOR SEEN! RGB: " + red + " " + green + " " + blue);
+            }
             
             scoreElement.textContent = "Fails: " + numFails;
 
