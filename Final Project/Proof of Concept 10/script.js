@@ -18,7 +18,6 @@ const scoreElement = document.getElementById('score');
 let posY = 0;
 
 const audio = document.querySelector("audio");
-//audio.addEventListener('canplay', () => {
 const audioPlay = () => {
     const source = context.createMediaElementSource(audio);
     source.connect(analyser);
@@ -146,7 +145,7 @@ const audioPlay = () => {
             // Request the next animation frame
             requestAnimationFrame(draw);
         };
-        //draw();
+        draw();
 
         // Sleep for 1000 ms
         window.setTimeout(
@@ -155,7 +154,6 @@ const audioPlay = () => {
         );
     }
     updatePitch(analyser, detector, input, context.sampleRate);
-//});
 };
 
 // Add a mousemove event listener to the canvas
