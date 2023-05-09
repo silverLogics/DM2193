@@ -29,7 +29,6 @@ const audioPlay = () => {
 
     let minPitch = 0;
     let maxPitch = Number.MIN_SAFE_INTEGER;
-    console.log("hi");
 
     function updatePitch(analyserNode, detector, input, sampleRate) {
         analyserNode.getFloatTimeDomainData(input);
@@ -40,7 +39,6 @@ const audioPlay = () => {
         clarityElement.textContent = "Clarity: " + `${Math.round(
             clarity * 100
         )} %`;
-        console.log(pitch);
         
         const draw = () => {
             // Clear the canvas
@@ -56,7 +54,7 @@ const audioPlay = () => {
                 }
                 pitchData.enqueue(pitch);
 
-                //Update the max pitche
+                //Update the max pitch
                 if (pitch > maxPitch) {
                     maxPitch = pitch;
                 }
@@ -105,15 +103,20 @@ const audioPlay = () => {
             canvasCtx.stroke();
 
             // Get the image data for the canvas
-            const imageData = canvasCtx.getImageData(0, 0, 1, canvas.height);
+            //const imageData = canvasCtx.getImageData(0, 0, 1, canvas.height);
+            const imageData = canvasCtx.getImageData(segmentWidth + 10, 0, 1, canvas.height);
             //console.log("Composite operation: " + canvasCtx.globalCompositeOperation);
             // Loop over each pixel in the image data and count the number of red pixels
             
-            for (let i = 0; i < imageData.data.length; i += 4) {
-                //Get the rgb values for the pixel
+            
+            //for (let i = 0; i < imageData.data.length; i += 4) {//Lags heavily
+                
+                let i = posY * 4;
+                //Get the rgb values for the pixel in the segment to the right
                 const red = imageData.data[i];
                 const green = imageData.data[i + 1];
                 const blue = imageData.data[i + 2];
+                
                 //Tally up the fails
                 if (red >= 1 && green === 0 && blue === 0) {
                     //Red
@@ -136,9 +139,12 @@ const audioPlay = () => {
                     console.log("Yellow seen");
                 }
                 else{
+                    numFails++;
                     console.log("UNKNOWN COLOR SEEN! RGB: " + red + " " + green + " " + blue);
                 }
-            }
+                
+            //}
+            
             
             scoreElement.textContent = "Fails: " + numFails;
 
@@ -161,7 +167,6 @@ canvas.addEventListener("mousemove", function (event) {
     // Get the current y position of the mouse relative to the canvas
     const rect = canvas.getBoundingClientRect();
     const mouseY = event.clientY - rect.top;
-
     // Update the lineY variable to match the mouse position
     posY = mouseY;
 });
@@ -179,6 +184,7 @@ startButton.addEventListener('click', () => {
 });
 
 audio.addEventListener('play', () => {
+    //Resize canvas when play button pressed
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight / 2;
 });
