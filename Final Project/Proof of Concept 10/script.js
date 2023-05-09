@@ -139,7 +139,7 @@ const audioPlay = () => {
                     console.log("Yellow seen");
                 }
                 else{
-                    numFails++;
+                    //numFails++;
                     console.log("UNKNOWN COLOR SEEN! RGB: " + red + " " + green + " " + blue);
                 }
                 
