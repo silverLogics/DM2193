@@ -104,7 +104,7 @@ const audioPlay = () => {
 
             // Get the image data for the canvas
             //const imageData = canvasCtx.getImageData(0, 0, 1, canvas.height);
-            const imageData = canvasCtx.getImageData(segmentWidth + 10, 0, 1, canvas.height);
+            const imageData = canvasCtx.getImageData(segmentWidth + 10, 1, 1, canvas.height);
             //console.log("Composite operation: " + canvasCtx.globalCompositeOperation);
             // Loop over each pixel in the image data and count the number of red pixels
             
