@@ -1,4 +1,4 @@
-//import { PitchDetector } from "https://esm.sh/pitchy@4";
+import { PitchDetector } from "https://esm.sh/pitchy@4";
 
 const context = new AudioContext();
 const analyser = context.createAnalyser();
@@ -18,7 +18,8 @@ const scoreElement = document.getElementById('score');
 let posY = 0;
 
 const audio = document.querySelector("audio");
-audio.addEventListener('canplay', () => {
+//audio.addEventListener('canplay', () => {
+const audioPlay = () => {
     const source = context.createMediaElementSource(audio);
     source.connect(analyser);
     analyser.connect(context.destination);
@@ -29,18 +30,19 @@ audio.addEventListener('canplay', () => {
 
     let minPitch = 0;
     let maxPitch = Number.MIN_SAFE_INTEGER;
+    console.log("hi");
 
     function updatePitch(analyserNode, detector, input, sampleRate) {
         analyserNode.getFloatTimeDomainData(input);
         const [pitch, clarity] = detector.findPitch(input, sampleRate);
-        //console.log(pitch);
 
         pitchElement.textContent = `${Math.round(pitch * 10) / 10
             } Hz`;
         clarityElement.textContent = "Clarity: " + `${Math.round(
             clarity * 100
         )} %`;
-
+        console.log(pitch);
+        
         const draw = () => {
             // Clear the canvas
             canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
@@ -54,14 +56,12 @@ audio.addEventListener('canplay', () => {
                     pitchData.dequeue();
                 }
                 pitchData.enqueue(pitch);
-                //console.log("pitchBack " + pitchData.back());
 
-                //Update the max and min pitches
+                //Update the max pitche
                 if (pitch > maxPitch) {
                     maxPitch = pitch;
                 }
             }
-            //console.log("Max: " + maxPitch);
 
             let pitchRange = maxPitch - minPitch;
 
@@ -146,7 +146,7 @@ audio.addEventListener('canplay', () => {
             // Request the next animation frame
             requestAnimationFrame(draw);
         };
-        draw();
+        //draw();
 
         // Sleep for 1000 ms
         window.setTimeout(
@@ -155,7 +155,8 @@ audio.addEventListener('canplay', () => {
         );
     }
     updatePitch(analyser, detector, input, context.sampleRate);
-});
+//});
+};
 
 // Add a mousemove event listener to the canvas
 canvas.addEventListener("mousemove", function (event) {
@@ -202,3 +203,5 @@ popupContainer.addEventListener('click', () => {
     popupContainer.style.visibility = 'hidden';
     popupContainer.style.opacity = 0;
 });
+
+audioPlay();
